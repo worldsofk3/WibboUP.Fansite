@@ -2,10 +2,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
-}
+
 
 model User {
   id    Int     @id @default(autoincrement())
@@ -26,7 +23,7 @@ model Post {
   authorId  Int?
 }
 
-datasource db {
+datasource mysql {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
