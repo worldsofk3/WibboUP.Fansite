@@ -2,7 +2,7 @@ import { Plugin } from '@nuxt/types';
 import mysql, { Pool } from 'mysql2/promise';
 import dotenv from 'dotenv';
 
-dotenv.config(); // Charge les variables d'environnement depuis le fichier .env
+dotenv.config();
 
 const connection: Pool = mysql.createPool({
   host: process.env.DB_HOST,
