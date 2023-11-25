@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="bg-[url('@/assets/imgs/default/back.jpg')] w-full h-[80px] border-b-4 border-[#efefef] opacity-80">
-            <div class="w-[930px] mx-auto">
+            <div class="xl:w-[930px] mx-auto">
                 <div class="flex items-center justify-between px-[8px] relative z-10">
                     <img class="max-w-[100%] h-auto z-10 block border-solid aspect-[0/1] img-pixelated" width="100px" height="100px" src="@/assets/imgs/header/icon_wb.gif" />
                     

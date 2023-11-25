@@ -1,10 +1,10 @@
 <template>
     <Navbar />
-    <section class="grid grid-cols-[600px_300px] gap-5 sm:w-2/3 mx-auto">
+    <section class="xl:grid xl:grid-cols-[600px_300px] gap-5 xl:w-2/3 mx-auto xl:pl-0 pl-2">
         
-            <div class="col-span-1 max-w[600px]">
+            <div class="col-span-1 xl:max-w[600px]">
                
-                <div class="mb-5 rounded-md flex items-center justify-evenly overflow-hidden bg-[url('https://images.habbo.com/c_images/catalogue/feature_cata_hort_scifi17bun1.png')] w-[600px] h-[160px]">
+                <div class="mb-5 xl:p-0 p-1 rounded-md flex items-center justify-evenly overflow-hidden bg-[url('https://images.habbo.com/c_images/catalogue/feature_cata_hort_scifi17bun1.png')] xl:w-[600px] h-[160px]">
                     
                     <img class="h-[194px] w-[128px] object-cover img-pixelated border-white-collapse hover:scale-110 transition-transform" src="https://imaging.wibbo.org/?figure=ch-3368-110-1408.hd-180-2.lg-3596-110-1408.he-3082-63.sh-295-110.ca-3177-110-73.cc-3827-1263-1230.wa-5238-1330.ea-1402-73.fa-1201-1408.hr-3871-61&head_direction=3&gesture=sml" />
                     
@@ -36,13 +36,13 @@
                                 <img src="https://imaging.wibbo.org/?figure=ch-3368-110-1408.hd-180-2.lg-3596-110-1408.he-3082-63.sh-295-110.ca-3177-110-73.cc-3827-1263-1230.wa-5238-1330.ea-1402-73.fa-1201-1408.hr-3871-61&direction=2&gesture=sml&size=m">
                                     <div>
                                         <p class="text-xs text-[#565656]">Le Wibbo du mois de Novembre 2023 est :</p>
-                                        <p class="text-3xl text-[#565656]">Jason</p>
+                                        <p class="text-3xl text-[#565656] font-bold">Jason</p>
                                         <p class="float-right text-xs underline text-[#3d72ab]">Voir le classement</p>
                                     </div>
                             </div>
                     </div>
 
-                    <div class="col-span-1 bg-[#efefef] h-min p-2 rounded-md box-shadow-type-1 border-b-2 border-[#9f9f9f]">
+                    <div class="col-span-1 bg-[#efefef] h-min p-2 rounded-md box-shadow-type-1 border-b-2 border-[#9f9f9f] mb-5">
                         <h4 class="bg-[#3d72ab] p-1 w-full text-center text-white rounded-md mb-2">Discord</h4>
                         <iframe
                             src="https://discord.com/widget?id=1170468974992031856&theme=dark"
