@@ -1,5 +1,3 @@
 <template>
-    <div class="xl:hidden">
-
-    </div>
+  <div class="xl:hidden" />
 </template>

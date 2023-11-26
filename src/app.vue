@@ -21,7 +21,6 @@ body,
     width: 100%;
 }
 
-
 ::-webkit-scrollbar {
     width: 14px;
 }
@@ -42,20 +41,20 @@ body,
 }
 
 .border-white-collapse {
-  filter: drop-shadow(2px 1px 0 #fff) 
+  filter: drop-shadow(2px 1px 0 #fff)
           drop-shadow(-2px 1px 0 #fff)
           drop-shadow(0 -2px 0 #fff);
 }
 
 .box-shadow-type-1 {
-  box-shadow: inset 0 -5px rgb(0 0 0/5%), 
-              inset 0 -30px rgb(0 0 0/1%), 
-              inset 0 -1px rgb(0 0 0/15%), 
+  box-shadow: inset 0 -5px rgb(0 0 0/5%),
+              inset 0 -30px rgb(0 0 0/1%),
+              inset 0 -1px rgb(0 0 0/15%),
               0 4px rgb(0 0 0/5%);
 }
 
 .admin-button-shadow {
-  box-shadow: 2px 2px 0 0 rgb(0 0 0 / 30%), 
+  box-shadow: 2px 2px 0 0 rgb(0 0 0 / 30%),
               inset 0 -3px 0 0 rgb(0 0 0 / 25%);
   background: #b03e3e;
   border: 1px solid rgba(0,0,0,.3);

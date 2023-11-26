@@ -1,8 +1,10 @@
 <template>
-<div class="min-h-full">
+  <div class="min-h-full">
     <main>
       <div class="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <button @click="showError">Hello Swalo</button>
+        <button @click="showError">
+          Hello Swalo
+        </button>
       </div>
     </main>
   </div>
