@@ -89,7 +89,7 @@ body,
     border-color: transparent transparent #fafafa transparent;
     border-style: solid;
     border-width: 10px;
-    position: fixed;
+    position: absolute;
     top: -20px;
     left: 50%;
     margin-left: -10px;
