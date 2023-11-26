@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model dedicace {
+  id      Int    @id @default(autoincrement())
+  message String
+}
+
+model interview {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String
+  text        String
+  link        String
+  image       String
+  video       String
+  journalist  String
+}
+
+model news {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String
+  text        String
+  image       String
+  autorId     Int
+  link        String
+  user        user   @relation(fields: [autorId], references: [id], map: "News_autorId_fkey")
+
+  @@index([autorId], map: "News_autorId_fkey")
+}
+
+model permissionrank {
+  id             Int    @id @default(autoincrement())
+  permissionName String
+  rankId         Int
+  rank           rank   @relation(fields: [rankId], references: [id], map: "PermissionRank_rankId_fkey")
+
+  @@index([rankId], map: "PermissionRank_rankId_fkey")
+}
+
+model rank {
+  id             Int              @id @default(autoincrement())
+  name           String           @unique(map: "Rank_name_key")
+  permissionrank permissionrank[]
+  user           user[]
+}
+
+model user {
+  id           Int      @id @default(autoincrement())
+  name         String
+  password     String
+  look         String
+  fonction     String
+  creationDate DateTime @default(now())
+  rankId       Int
+  news         news[]
+  rank         rank     @relation(fields: [rankId], references: [id], map: "User_rankId_fkey")
+
+  @@index([rankId], map: "User_rankId_fkey")
+}
