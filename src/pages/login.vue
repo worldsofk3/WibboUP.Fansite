@@ -8,31 +8,53 @@
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form class="space-y-6" action="#" method="POST">
+      <form @submit.prevent="login" class="space-y-6">
         <div>
-          <label for="pseudo" class="block text-sm font-medium leading-6 text-neutral-50">Nom d'utilisateur :</label>
+          <label for="inputusername" class="block text-sm font-medium leading-6 text-neutral-50">Nom d'utilisateur :</label>
           <div class="mt-2">
-            <input id="inputusername" class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none" type="text" name="" placeholder="Entre ton nom d'utilisateur">
+            <input v-model="loginForm.name" class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none" type="text" placeholder="Entre ton nom d'utilisateur">
           </div>
         </div>
 
         <div>
-          <div class="flex items-center justify-between">
-            <label for="password" class="block text-sm font-medium leading-6 text-neutral-50">Mot de passe :</label>
-          </div>
+          <label for="inputpassword" class="block text-sm font-medium leading-6 text-neutral-50">Mot de passe :</label>
           <div class="mt-2">
-            <input id="inputusername" class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none" type="text" name="" placeholder="Entre ton mot de passe">
+            <input v-model="loginForm.password" class="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none" type="password" placeholder="Entre ton mot de passe">
           </div>
         </div>
 
         <div>
-          <NuxtLink to="/admin">
-            <button type="submit" class="flex w-full justify-center rounded-md bg-emerald-500  px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-              S'identifier
-            </button>
-          </NuxtLink>
+          <button type="submit" class="flex w-full justify-center rounded-md bg-emerald-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-emerald-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+            S'identifier
+          </button>
         </div>
       </form>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { ref } from 'vue';
+
+const loginForm = ref({ name: '', password: '' });
+
+async function login() {
+  try {
+    if (!loginForm.value.name || !loginForm.value.password) {
+      throw new Error('Merci de saisir un nom d\'utilisateur et un mot de passe');
+    }
+
+    const token = await $fetch('/api/auth', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(loginForm.value) 
+    });
+
+    console.log('Token reçu:', token);
+  } catch (error) {
+    console.error('Identifiants incorrects', error.message);
+  }
+}
+</script>
