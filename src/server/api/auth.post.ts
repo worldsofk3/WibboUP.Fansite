@@ -1,10 +1,9 @@
-import bcrypt from 'bcrypt'
+import { compare } from 'bcrypt'
 import { generateJWTToken } from '../utils/jsonwebtoken'
 import { prisma } from '../utils/database'
 
 interface CustomError extends Error {
   statusCode?: number;
-  statusMessage?: string;
 }
 
 export default defineEventHandler(async (event) => {
@@ -35,7 +34,7 @@ export default defineEventHandler(async (event) => {
       throw error
     }
 
-    const passwordMatch = await bcrypt.compare(password, user.password)
+    const passwordMatch = await compare(password, user.password)
 
     if (!passwordMatch) {
       const error: CustomError = {
@@ -52,7 +51,8 @@ export default defineEventHandler(async (event) => {
   } catch (error) {
     const typedError = error as CustomError
     const statusCode = typedError.statusCode || 500
-    const statusMessage = typedError.statusMessage || `Erreur lors de l'authentification: ${typedError.message}`
+    const statusMessage = `Erreur lors de l'authentification: ${typedError.message}`
+
     throw createError({ statusCode, statusMessage })
   }
 })

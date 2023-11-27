@@ -7,8 +7,12 @@
       </h2>
     </div>
 
+    <div v-if="errorMessage != ''" class="text-center text-red-500">
+      {{ errorMessage }}
+    </div>
+
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-      <form @submit.prevent="login" class="space-y-6">
+      <form class="space-y-6" @submit.prevent="login">
         <div>
           <label for="inputusername" class="block text-sm font-medium leading-6 text-neutral-50">Nom d'utilisateur :</label>
           <div class="mt-2">
@@ -34,27 +38,25 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-const loginForm = ref({ name: '', password: '' });
+const loginForm = ref({ name: '', password: '' })
+const errorMessage = ref('')
 
-async function login() {
+async function login () {
   try {
     if (!loginForm.value.name || !loginForm.value.password) {
-      throw new Error('Merci de saisir un nom d\'utilisateur et un mot de passe');
+      throw new Error('Merci de saisir un nom d\'utilisateur et un mot de passe')
     }
 
-    const token = await $fetch('/api/auth', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(loginForm.value) 
-    });
+    const token = await $fetch('/api/auth', { method: 'POST', body: loginForm.value })
 
-    console.log('Token reçu:', token);
+    console.log('Token reçu:', token)
   } catch (error) {
-    console.error('Identifiants incorrects', error.message);
+    if (error instanceof Error) {
+      console.log(error)
+      errorMessage.value = error.message
+    }
   }
 }
 </script>
