@@ -14,27 +14,25 @@
                 </AdminButtonNav>
               </NuxtLink>
               <div class="group relative">
-               <AdminButtonNav>
-                 Utilisateurs
-               </AdminButtonNav>
-               <MenuAdminNavButton>
+                <AdminButtonNav>
+                  Utilisateurs
+                </AdminButtonNav>
+                <MenuAdminNavButton>
                   <li>Créer un utilisateur</li>
-               </MenuAdminNavButton>
+                </MenuAdminNavButton>
               </div>
               <div class="group relative">
-               <AdminButtonNav>
-                 Interviews
-               </AdminButtonNav>
-               <MenuAdminNavButton>
+                <AdminButtonNav>
+                  Interviews
+                </AdminButtonNav>
+                <MenuAdminNavButton>
                   <li>Créer un utilisateur</li>
-               </MenuAdminNavButton>
+                </MenuAdminNavButton>
               </div>
 
               <AdminButtonNav>
                 Articles
               </AdminButtonNav>
-              
-              
             </div>
           </div>
         </div>

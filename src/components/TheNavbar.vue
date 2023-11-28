@@ -9,7 +9,7 @@
           </ButtonNav>
         </NuxtLink>
 
-        <div class="relative group flex flex-col items-center">
+        <div class="relative flex flex-col items-center group">
           <!-- Déroulant, à tester avec cette structure -->
           <ButtonNav>
             <img src="@/assets/imgs/commu.png"><span class="pl-2 hover:text-[#959595] hover:shadow-[0_2px_rgba(255,255,255,.2)] transition-colors cursor-pointer">Communauté</span>

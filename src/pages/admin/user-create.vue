@@ -1,3 +1,3 @@
 <template>
-    <AdminNavbar />
+  <div>User create</div>
 </template>
