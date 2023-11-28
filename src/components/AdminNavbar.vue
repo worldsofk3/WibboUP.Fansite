@@ -18,7 +18,15 @@
                   Utilisateurs
                 </AdminButtonNav>
                 <MenuAdminNavButton>
-                  <li>Créer un utilisateur</li>
+                  <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Créer un utilisateur
+                  </li>
+                  <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Supprimer un utilisateur
+                  </li>
+                  <li class="p-2 invisible group-hover:visible rounded-b-md hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Gérer un utilisateur
+                  </li>
                 </MenuAdminNavButton>
               </div>
               <div class="relative group">
@@ -26,15 +34,49 @@
                   Interviews
                 </AdminButtonNav>
                 <MenuAdminNavButton>
-                  <li>Créer un utilisateur</li>
+                  <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Créer une itw
+                  </li>
+                  <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Supprimer une itw
+                  </li>
+                  <li class="p-2 invisible group-hover:visible rounded-b-md hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Gérer une itw
+                  </li>
                 </MenuAdminNavButton>
               </div>
-
-              <NuxtLink to="/article">
+              <div class="relative group">
                 <AdminButtonNav>
                   Articles
                 </AdminButtonNav>
-              </NuxtLink>
+                <MenuAdminNavButton>
+                  <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Créer un article
+                  </li>
+                  <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Supprimer un article
+                  </li>
+                  <li class="p-2 invisible group-hover:visible rounded-b-md hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Gérer un article
+                  </li>
+                </MenuAdminNavButton>
+              </div>
+              <div class="relative group">
+                <AdminButtonNav>
+                  Dédicaces
+                </AdminButtonNav>
+                <MenuAdminNavButton>
+                  <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Créer une dédicace
+                  </li>
+                  <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Supprimer une dédi
+                  </li>
+                  <li class="p-2 invisible group-hover:visible rounded-b-md hover:bg-gray-900 hover:text-white transition-colors duration-200">
+                    Gérer une dédicace
+                  </li>
+                </MenuAdminNavButton>
+              </div>
             </div>
           </div>
         </div>
