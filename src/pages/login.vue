@@ -7,8 +7,8 @@
       </h2>
     </div>
 
-    <div v-if="errorMessage != ''" class="text-center text-red-500">
-      {{ errorMessage }}
+    <div v-for="(message, index) in notifications" :key="'message' + index" class="text-center" :class="isSuccess ? 'text-green-700' : 'text-red-500'">
+      {{ message }}
     </div>
 
     <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
@@ -42,19 +42,20 @@ import { ref } from 'vue'
 
 const loginForm = ref({ name: '', password: '' })
 const errorMessage = ref('')
+const { notifications, isSuccess, showMessage } = useNotification()
 
-async function login () {
+const login = async () => {
   try {
     if (!loginForm.value.name || !loginForm.value.password) {
       throw new Error('Merci de saisir un nom d\'utilisateur et un mot de passe')
     }
 
-    const token = await $fetch('/api/auth', { method: 'POST', body: loginForm.value })
+    const token = await useApiFetch<{ value: string }>('/api/auth', { method: 'POST', body: loginForm.value })
 
-    console.log('Token reçu:', token)
+    console.log('Token reçu:', token.data.value)
+    showMessage({ message: 'Connexion reussie: ' + token.data.value, success: true })
   } catch (error) {
     if (error instanceof Error) {
-      console.log(error)
       errorMessage.value = error.message
     }
   }
