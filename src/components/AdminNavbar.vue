@@ -2,18 +2,18 @@
   <nav class="bg-gray-800">
     <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <div class="flex items-center">
+        <div class="flex items-center w-full">
           <div class="flex-shrink-0">
             <img class="w-auto h-16 mx-auto" src="@/assets/imgs/logo.png" alt="Logo">
           </div>
-          <div class="hidden md:block">
-            <div class="flex items-baseline space-x-4">
+          <div class="hidden w-full md:block">
+            <div class="flex items-baseline w-full space-x-4">
               <NuxtLink to="/admin">
                 <AdminButtonNav>
                   Accueil
                 </AdminButtonNav>
               </NuxtLink>
-              <div class="group relative">
+              <div class="relative group">
                 <AdminButtonNav>
                   Utilisateurs
                 </AdminButtonNav>
@@ -21,7 +21,7 @@
                   <li>Créer un utilisateur</li>
                 </MenuAdminNavButton>
               </div>
-              <div class="group relative">
+              <div class="relative group">
                 <AdminButtonNav>
                   Interviews
                 </AdminButtonNav>
@@ -30,9 +30,11 @@
                 </MenuAdminNavButton>
               </div>
 
-              <AdminButtonNav>
-                Articles
-              </AdminButtonNav>
+              <NuxtLink to="/article">
+                <AdminButtonNav>
+                  Articles
+                </AdminButtonNav>
+              </NuxtLink>
             </div>
           </div>
         </div>
