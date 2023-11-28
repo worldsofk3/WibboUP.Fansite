@@ -7,19 +7,34 @@
             <img class="w-auto h-16 mx-auto" src="@/assets/imgs/logo.png" alt="Logo">
           </div>
           <div class="hidden md:block">
-            <div class="flex items-baseline ml-10 space-x-4">
-              <NuxtLink to="/admin" class="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md" aria-current="page">
-                Home
+            <div class="flex items-baseline space-x-4">
+              <NuxtLink to="/admin">
+                <AdminButtonNav>
+                  Accueil
+                </AdminButtonNav>
               </NuxtLink>
-              <NuxtLink to="/admin/article-create" class="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md" aria-current="page">
-                Créer un article
-              </NuxtLink>
-              <NuxtLink to="/admin/article-delete" class="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md" aria-current="page">
-                Supprimer un article
-              </NuxtLink>
-              <div class="px-3 py-2 text-sm font-medium text-white bg-gray-900 rounded-md" aria-current="page">
-                Déconnexion
+              <div class="group relative">
+               <AdminButtonNav>
+                 Utilisateurs
+               </AdminButtonNav>
+               <MenuAdminNavButton>
+                  <li>Créer un utilisateur</li>
+               </MenuAdminNavButton>
               </div>
+              <div class="group relative">
+               <AdminButtonNav>
+                 Interviews
+               </AdminButtonNav>
+               <MenuAdminNavButton>
+                  <li>Créer un utilisateur</li>
+               </MenuAdminNavButton>
+              </div>
+
+              <AdminButtonNav>
+                Articles
+              </AdminButtonNav>
+              
+              
             </div>
           </div>
         </div>
