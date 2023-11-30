@@ -19,7 +19,9 @@
                 </AdminButtonNav>
                 <MenuAdminNavButton>
                   <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
-                    Créer un utilisateur
+                    <NuxtLink to="/admin/user-create">
+                      Créer un utilisateur
+                    </NuxtLink>
                   </li>
                   <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
                     Supprimer un utilisateur
@@ -51,10 +53,14 @@
                 </AdminButtonNav>
                 <MenuAdminNavButton>
                   <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
-                    Créer un article
+                    <NuxtLink to="/admin/article-create">
+                      Créer un article
+                    </NuxtLink>
                   </li>
                   <li class="p-2 invisible group-hover:visible border-gray-900 border-b hover:bg-gray-900 hover:text-white transition-colors duration-200">
-                    Supprimer un article
+                    <NuxtLink to="/admin/article-delete">
+                      Supprimer un article
+                    </NuxtLink>
                   </li>
                   <li class="p-2 invisible group-hover:visible rounded-b-md hover:bg-gray-900 hover:text-white transition-colors duration-200">
                     Gérer un article
